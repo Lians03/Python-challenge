@@ -31,14 +31,15 @@ with open(csv_path, 'r', newline='', encoding='utf-8') as file:
             change = profit_loss - last_month
             changes.append(change)
             
-            if change > max_increase:
+        if change > max_increase:
                 max_increase = change
                 max_increase_date = date
-            elif change < max_decrease:
+        elif change < max_decrease:
                 max_decrease = change
                 max_decrease_date = date
 
         last_month = profit_loss
+        
 total_change = sum(changes)
 average_change = average(changes)
 
